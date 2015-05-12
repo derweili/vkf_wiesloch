@@ -1,0 +1,74 @@
+*, h1, h2, h3, h4{
+	font-family: 'Bitter', serif;
+}
+
+h3{
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 1.875rem;
+}
+h4{
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 1.875rem;
+}
+p{
+	font-size: 1.5rem;
+	font-weight: normal;
+	line-height: 1.875rem;
+}
+.site-header{
+	min-height: 100vh;
+	background-image: url('http://vkf-wiesloch:8888/wp-content/themes/vkf_wiesloch/img/header-bg.jpg');
+	background-size: cover;
+}
+.site-logo{
+	margin-top: 2rem;
+}
+
+.start{
+	padding: 2.5rem 0;
+}
+.start-box{
+	text-align: center;
+	color: #013259;
+}
+
+.termine{
+	padding: 4.375rem;
+	background: #e10f47;
+	color: white;
+}
+.termine h3{
+	text-align: center;
+	color: white;
+	margin: 0 0 1.875rem 0;
+}
+.termine article{
+	border-top: 1px white solid;
+}
+
+.termine article p{
+	padding: 1.1875rem 1.375rem
+}
+
+.imageslider .placeholder{
+	width: 100%
+}
+.checkliste{
+	background-image: url('http://vkf-wiesloch:8888/wp-content/themes/vkf_wiesloch/img/checkliste-bg.jpg');
+	background-size: cover;
+	padding: 3.75rem 0;	
+}
+.checkliste h3{
+	color: #ff5a00;
+	text-align: center;
+}
+.checkliste h4{
+	color: #2d8dc0;
+	text-align: center;
+}
+.checklisteicons{
+	margin-top: 3.125rem;
+	margin-bottom: 3.125rem;
+}
