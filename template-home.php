@@ -48,13 +48,29 @@ get_header();
 		</div>
 	</div>
 	<div class="row">
-		<div class="columns medium-8 medium-offset-2">
+		<div class="columns medium-10 medium-offset-1">
 			<img class="checklisteicons" src="<?php bloginfo('template_directory'); ?>/img/checkliste-icons.png">
 		</div>
 	</div>
 	<div class="row">
 		<div class="columns medium-8 medium-offset-2">
 			<p>Luftmatratze oder Feldbett Isomatte Schlafsack Decke Trinkflasche, Campinggeschirr (Tasse, Teller, Besteck), Geschirrbeutel. Warme Pullover, Lange und kurze Hosen, ausreichend Unterwäsche und Socken, ausreichend T-Shirts, weißes T-Shirt aus Baumwolle zum batiken, Windjacke, Regenjacke, Gummistiefel, Sportschuhe, offene Schuhe, feste Wanderschuhe, Kopfbedeckung gegen die Sonne, Sonnencreme, Mückenschutz (z.B. Autanspray), Badesachen, Badehose, Liegetuch, Bademantel, Schwimmflügel, Taucherbrille, Handtücher, Waschzeug, Taschenlampe und Batterien nicht vergessen, Rucksack, Impfpass,Krankenkasse Versichertenkarte, ggfls. notwendige Medikamente, Ausweis.</p>
+		</div>
+	</div>
+</div>
+<div class="alert">
+	<div class="row">
+		<div class="columns large-8 large-offset-2">
+			<p>Verwendet bitte statt eines Koffers besser einen Seesack oder Sporttaschen, da diese unempfindlicher und einfacher zu verstauen sind. Packt die Taschen zusammen mit Euren Kindern. Bitte kennzeichnet Eure Kleider, Taschen und Geschirr, damit alles bei seinem Besitzer bleibt.</p>
+		</div>
+	</div>
+</div>
+
+<div class="news">
+	<h3>News und Neuigkeiten</h3>
+	<div class="row">
+		<div class="columns large-10 large-offset-1">
+
 		</div>
 	</div>
 </div>

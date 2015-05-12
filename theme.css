@@ -72,3 +72,20 @@ p{
 	margin-top: 3.125rem;
 	margin-bottom: 3.125rem;
 }
+
+.alert{
+	padding: 3.75rem 0;
+}
+
+.alert p{
+	font-weight: bold;
+	color: #e10f47;
+}
+.news{
+	padding: 3.75rem 0;
+	background: #9d6f56;
+}
+.news h3{
+	text-align: center;
+	color: #61250c;
+}
