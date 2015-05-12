@@ -18,7 +18,8 @@ get_header();
 		<p>Viele Tolle Aktivitäten, wie AGs, basteln, Bewegungspiele und vieles mehr lassen auch die Papas wieder ganz Kind sein.</p>
 	</div>
 </div>
-<div class="termine">
+<div class="termine section">
+	<img src="<?php bloginfo('template_directory'); ?>/img/taschenlampe.png" class="sectionicon">
 	<div class="row">
 		<div class="columns large-8 large-offset-2 medium-8 medium-offset-2">
 			<h3>Anstehende Termine</h3>

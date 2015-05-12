@@ -26,8 +26,20 @@ p{
 	margin-top: 2rem;
 }
 
+.section{
+	position: relative;
+}
+.sectionicon{
+	position: absolute;
+	top: -50px;
+	left:50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
 .start{
-	padding: 2.5rem 0;
+	padding: 2.5rem 0 95px;
 }
 .start-box{
 	text-align: center;
@@ -35,7 +47,7 @@ p{
 }
 
 .termine{
-	padding: 4.375rem;
+	padding: 130px 0 4.375rem 0;
 	background: #e10f47;
 	color: white;
 }
