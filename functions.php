@@ -39,7 +39,7 @@ function vkf_wiesloch_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -146,3 +146,12 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Theme functions.
  */
 require get_template_directory() . '/inc/themefunctions.php';
+
+/**
+ * Load Slider functions.
+ */
+require get_template_directory() . '/inc/vkf-fullslider.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/vkf-calendar.php';
