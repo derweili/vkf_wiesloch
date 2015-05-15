@@ -42,6 +42,8 @@ function vkf_wiesloch_slider() {
 				      ?>
 			        </div>	        
 			    </div>
+                <a href="#" class="jcarousel-control-prev"><img src="<?php bloginfo('template_directory'); ?>/img/prev.png" /></a>
+                <a href="#" class="jcarousel-control-next"><img src="<?php bloginfo('template_directory'); ?>/img/next.png" /></a>
 			    <div class="jcarousel-pagination"></div>
 			</div>
 			<?php 
@@ -103,10 +105,10 @@ if ( ! function_exists( 'vkf_wiesloch_slider_style' ) ) : //Template Tag Functio
 			text-align: center;
 		}
 
-		.jcarousel-pagination {
+		.imageslider .jcarousel-pagination {
 		    text-align: center;
 		    position: absolute;
-		    bottom: 0;
+		    bottom: 30px;
 		    width: 100%;
 		    padding-bottom: 8px;
 		}
@@ -129,6 +131,22 @@ if ( ! function_exists( 'vkf_wiesloch_slider_style' ) ) : //Template Tag Functio
 
 		.jcarousel-pagination span.active {
 		    opacity: 1;
+		}
+		.jcarousel-control-prev {
+		    height: 210px;
+		    left: 10px;
+		    position: absolute;
+		    top: 48%;
+		    transform: translateY(-50%);
+		    width: 50px;
+		}
+		.jcarousel-control-next {
+		    height: 210px;
+		    right: 10px;
+		    position: absolute;
+		    top: 48%;
+		    transform: translateY(-50%);
+		    width: 50px;
 		}
     </style>
 
@@ -167,6 +185,29 @@ if ( ! function_exists( 'vkf_wiesloch_jcarousel_slider_script' ) ) : // slider s
 			            target: '+=1',
 			            autostart: true
 			        });
+		        $('.jcarousel-control-prev')
+		            .on('jcarouselcontrol:active', function() {
+		                $(this).removeClass('inactive');
+		            })
+		            .on('jcarouselcontrol:inactive', function() {
+		                $(this).addClass('inactive');
+		            })
+		            .jcarouselControl({
+		                target: '-=1'
+		            });
+
+
+		        $('.jcarousel-control-next')
+		            .on('jcarouselcontrol:active', function() {
+		                $(this).removeClass('inactive');
+		            })
+		            .on('jcarouselcontrol:inactive', function() {
+		                $(this).addClass('inactive');
+		            })
+		            .jcarouselControl({
+		                target: '+=1'
+		            });
+
 
 				jQuery('.jcarousel-pagination')
 					.on('jcarouselpagination:active', 'span', function() {

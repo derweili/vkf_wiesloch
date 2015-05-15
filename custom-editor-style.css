@@ -1,0 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,400italic,700);
+
+body#tinymce.wp-editor.post-type-post { 
+    font-family: Bitter, Helvetica, sans-serif; 
+    margin: 10px; 
+	background: #9d6f56;
+	color: white;
+	font-size:24px;
+	font-weight: 400;
+	line-height: 30px;
+	margin-bottom: 	20px;
+	max-width: 818px;
+}
+h1, h2, h3, h4, h5, h6{
+	color: #61250c;
+}
+
+body#tinymce.wp-editor a {
+    color: #4CA6CF;
+}

@@ -68,7 +68,7 @@ function vkf_wiesloch_calendar(){
     if(!empty($posts)):
 	    $totalposts = count($posts);
 	    ?>
-		<div class="termine section">
+		<div class="termine section" id="termine">
 			<img src="<?php bloginfo('template_directory'); ?>/img/taschenlampe.png" class="sectionicon">
 			<div class="row">
 				<div class="columns large-8 large-offset-2 medium-8 medium-offset-2">

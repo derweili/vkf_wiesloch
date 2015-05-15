@@ -4,40 +4,53 @@
 */ 
 get_header();
 ?>
+<header id="masthead" class="site-header parallax-container" data-natural-height="900" data-natural-width="1400" data-image-src="<?php $options = get_option('vkf_wiesloch_theme_options'); if( empty( $options['homeheader'] ) ) : ?><?php bloginfo('template_directory'); ?>/img/header-bg.png <?php else: echo $options['homeheader']; endif; ?>" data-bleed="10" data-position="top" data-parallax="scroll"  role="banner">
+	<div class="site-branding row" >
+		<div class="site-logo columns large-12" style="text-align:center"><img src="<?php bloginfo('template_directory'); ?>/img/header-logo.png" /></div>
+	</div><!-- .site-branding -->
+	<div class="pusher">
+	</div>
+	<div class="row" >
+		<div class="columns large-8 large-offset-2">
+			<h2 class="teasertextheadline">Herzlich willkommen auf der Seite der Väter-Kinder-Freizeit Wiesloch!</h2>
+			<p class="teaertextcopy">
+				Die VKF oder auch “FAUKAEF” ist ein Ferien-Zeltlager für Kinder im Alter zwischen vier bis zwölf Jahren mit ihren Papas.
+			</p>
+			<p class="teaertextcopy">
+				Gegründet wurde die VKF schon im Jahr 2000 in Wiesloch. 
+			</p>
+		</div>
+	</div>
+</header><!-- #masthead -->
+<div id="content" class="site-content">
 <div class="row start">
-	<div class="columns large-4 start-box">
-		<img src="<?php bloginfo('template_directory'); ?>/img/start-icon-1.png" class="starticon" />
-		<h3>Einfach (wieder) Kind sein!</h3>
-		<p>Viele Tolle Aktivitäten, wie AGs, basteln, Bewegungspiele und vieles mehr lassen auch die Papas wieder ganz Kind sein.</p>
-	</div>
-	<div class="columns large-4 start-box">
-		<img src="<?php bloginfo('template_directory'); ?>/img/start-icon-2.png" class="starticon" />
-		<h3>Weil die Natur zählt…</h3>
-		<p>Viele Tolle Aktivitäten, wie AGs, basteln, Bewegungspiele und vieles mehr lassen auch die Papas wieder ganz Kind sein.</p>
-	</div>
-	<div class="columns large-4 start-box">
-		<img src="<?php bloginfo('template_directory'); ?>/img/start-icon-3.png" class="starticon" />
-		<h3>Einfach (wieder) Kind sein!</h3>
-		<p>Viele Tolle Aktivitäten, wie AGs, basteln, Bewegungspiele und vieles mehr lassen auch die Papas wieder ganz Kind sein.</p>
-	</div>
+		<?php
+			if ( function_exists( 'vkf_wiesloch_boxes' ) ) { //Boxes
+				vkf_wiesloch_boxes();
+			};
+		?>
 </div>
+
 <?php
-	if ( function_exists( 'vkf_wiesloch_calendar' ) ) {
+	if ( function_exists( 'vkf_wiesloch_calendar' ) ) { //Termine
 		vkf_wiesloch_calendar();
 	}
 ?>
+
 <div class="imageslider">
 	<?php
-		if (function_exists( 'vkf_wiesloch_slider' )) {
+		if (function_exists( 'vkf_wiesloch_slider' )) { //Bilderslider
 			vkf_wiesloch_slider();
 		}
 	?>
 </div>
-<div class="checkliste">
+
+<div class="checkliste" id="checkliste"> <!-- Checkliste -->
+	<img class="sectionicon" src="<?php bloginfo('template_directory'); ?>/img/checkliste-section-icon.png">
 	<div class="row">
 		<div class="columns large-8 large-offset-2 medium-8 medium-offset-2">
 			<h3>Checkliste</h3>
-			<h4>Ich packe meinen Koffer und nehme mit…</h4>
+			<h4><?php if( empty( $options['checklistsub'] ) ) : ?>Ich packe meinen Koffer und nehme mit… <?php else: echo $options['checklistsub']; endif; ?></h4>
 		</div>
 	</div>
 	<div class="row">
@@ -45,27 +58,33 @@ get_header();
 			<img class="checklisteicons" src="<?php bloginfo('template_directory'); ?>/img/checkliste-icons.png">
 		</div>
 	</div>
-	<div class="row">
-		<div class="columns medium-8 medium-offset-2">
-			<p> <input type="checkbox" name="bettt" value="bett" id="check1"><label for="check1">Luftmatratze oder Feldbett</label> Isomatte Schlafsack Decke Trinkflasche, Campinggeschirr (Tasse, Teller, Besteck), Geschirrbeutel. Warme Pullover, Lange und kurze Hosen, ausreichend Unterwäsche und Socken, ausreichend T-Shirts, weißes T-Shirt aus Baumwolle zum batiken, Windjacke, Regenjacke, Gummistiefel, Sportschuhe, offene Schuhe, feste Wanderschuhe, Kopfbedeckung gegen die Sonne, Sonnencreme, Mückenschutz (z.B. Autanspray), Badesachen, Badehose, Liegetuch, Bademantel, Schwimmflügel, Taucherbrille, Handtücher, Waschzeug, Taschenlampe und Batterien nicht vergessen, Rucksack, Impfpass,Krankenkasse Versichertenkarte, ggfls. notwendige Medikamente, Ausweis.</p>
-		</div>
+	<?php
+		if ( function_exists( 'vkf_wiesloch_checklist' ) ) {
+			vkf_wiesloch_checklist();
+		};
+	?>
+	<div class="row download">
+		<a class="downloadbutton" href="<?php if( empty( $options['checklistpdf'] ) ) : ?><?php bloginfo('template_directory'); ?>/img/checkliste.pdf <?php else: echo $options['checklistpdf']; endif; ?>" target="_blank">Download als PDF</a>
 	</div>
 </div>
 <div class="alert">
 	<div class="row">
-		<div class="columns large-8 large-offset-2">
+		<div class="columns large-1 medium-1 small-3 large-offset-1"><img src="<?php bloginfo('template_directory'); ?>/img/alert-icon.png"></div>
+		<div class="columns large-8 medium-8 small-9 end">
 			<p>Verwendet bitte statt eines Koffers besser einen Seesack oder Sporttaschen, da diese unempfindlicher und einfacher zu verstauen sind. Packt die Taschen zusammen mit Euren Kindern. Bitte kennzeichnet Eure Kleider, Taschen und Geschirr, damit alles bei seinem Besitzer bleibt.</p>
 		</div>
 	</div>
 </div>
 
-<div class="news">
-	<h3>News und Neuigkeiten</h3>
-	<div class="row">
-		<div class="columns large-10 large-offset-1">
-
-		</div>
-	</div>
-</div>
+<?php
+	if (function_exists( 'vkf_wiesloch_news_slider' )) {
+		vkf_wiesloch_news_slider();
+	}
+?>
+<?php
+	if (function_exists( 'vkf_wiesloch_teamer' )) {
+		vkf_wiesloch_teamer();
+	}
+?>
 
 <?php get_footer(); ?>

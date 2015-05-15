@@ -24,15 +24,39 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<!--<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vkf_wiesloch' ); ?></a>-->
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding row">
-			<div class="site-logo columns large-4 large-offset-4"><img src="<?php bloginfo('template_directory'); ?>/img/header-logo.png"></div>
-		</div><!-- .site-branding -->
+<?php 
+if ( !wp_is_mobile() ):
+ ?>
+<div class="contain-to-grid sticky"><!-- Add sticky class to make manu "sticky". -->
+	<nav class="top-bar" data-topbar role="navigation">
+	  <ul class="title-area">
+	    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+	  </ul>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vkf_wiesloch' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	  <section class="top-bar-section">
+	    <!-- Right Nav Section -->
+	    <!--<ul class="right">
+	      <li class="active"><a href="#">Right Button Active</a></li>
+	      <li class="has-dropdown">
+	        <a href="#">Right Button with Dropdown</a>
+	        <ul class="dropdown">
+	          <li><a href="#">First link in dropdown</a></li>
+	        </ul>
+	      </li>
+	    </ul>-->
 
-	<div id="content" class="site-content">
+	    <!-- Left Nav Section -->
+	    <?php
+		$options = array(
+		  'theme_location' => 'main_nav',
+		  'container' => false,
+		  'depth' => 5,
+		  'items_wrap' => '<ul id="%1$s" class="left %2$s">%3$s</ul>',
+		  'walker' => new vkf_wiesloch_walker_nav_menu()
+		);
+		wp_nav_menu($options); ?>
+	  </section>
+	</nav>
+</div>
+<?php endif; ?>
+

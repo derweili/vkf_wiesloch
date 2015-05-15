@@ -43,7 +43,7 @@ function vkf_wiesloch_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'vkf_wiesloch' ),
+		'main_nav' => esc_html__( 'Main Menu', 'dpsg_rohrbach' ),
 	) );
 
 	/*
@@ -58,15 +58,15 @@ function vkf_wiesloch_setup() {
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
+	/*add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
-	) );
+	) );*/
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'vkf_wiesloch_custom_background_args', array(
+	/*add_theme_support( 'custom-background', apply_filters( 'vkf_wiesloch_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
-	) ) );
+	) ) );*/
 }
 endif; // vkf_wiesloch_setup
 add_action( 'after_setup_theme', 'vkf_wiesloch_setup' );
@@ -79,7 +79,7 @@ add_action( 'after_setup_theme', 'vkf_wiesloch_setup' );
  * @global int $content_width
  */
 function vkf_wiesloch_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'vkf_wiesloch_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'vkf_wiesloch_content_width', 818 );
 }
 add_action( 'after_setup_theme', 'vkf_wiesloch_content_width', 0 );
 
@@ -95,8 +95,8 @@ function vkf_wiesloch_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'vkf_wiesloch_widgets_init' );
@@ -155,3 +155,31 @@ require get_template_directory() . '/inc/vkf-fullslider.php';
  * Load calendar functions.
  */
 require get_template_directory() . '/inc/vkf-calendar.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/menu.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/vkf-checklist.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/vkf-newsslider.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/vkf-teamer.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/vkf-boxes.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/theme-options.php';
+/**
+ * Load calendar functions.
+ */
+require get_template_directory() . '/inc/vkf-textfeature.php';
