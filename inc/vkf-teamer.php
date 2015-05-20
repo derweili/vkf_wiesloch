@@ -35,7 +35,7 @@ function vkf_wiesloch_register_teamer() {
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => null,
-		'menu_icon'           => null,
+		'menu_icon'           => 'dashicons-admin-users',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => true,
@@ -119,9 +119,9 @@ function vkf_wiesloch_teamer(){
 	    $totalposts = count($posts);
 	    ?>
 
-<div class="team">
-	<img src="<?php bloginfo('template_directory'); ?>/img/teamer-section-icon.png" class="sectionicon"/>
-	<h3>Team</h3>
+<div class="team" id="team">
+	<img src="<?php echo get_theme_mod('team_icon', get_stylesheet_directory_uri() . '/img/teamer-section-icon.png'); ?>" class="sectionicon"/>
+	<h3 class="teamhead"><?php echo get_theme_mod('teamer_headline', 'Team'); ?></h3>
 	<div class="row">
 		<div class="columns large-10 large-offset-1 end">
 			<div class="row">
@@ -139,7 +139,7 @@ function vkf_wiesloch_teamer(){
 									<?php if ( has_post_thumbnail() ): ?>
 										<?php the_post_thumbnail('thumbnail'); ?>
 									<?php else: ?>
-										<div class="placeholder" style="height: 107px; width: 107px; background: #787878"></div>
+										<img src="<?php bloginfo('template_directory'); ?>/img/placeholder.jpg" />
 									<?php endif; ?>
 								</div>
 							</div>

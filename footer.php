@@ -11,11 +11,11 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-	<img class="sectionicon" src="<?php bloginfo('template_directory'); ?>/img/kontakt-section-icon.png">
-		<h3>Kontakt und Anmeldung</h3>
+	<img class="sectionicon" src="<?php echo get_theme_mod('footericon', get_stylesheet_directory_uri() . '/img/kontakt-section-icon.png'); ?>">
+		<h3 class="footerhead"><?php echo get_theme_mod('footer_headline', 'Kontakt und Anmeldung'); ?></h3>
 		<div class="row">
 			<div class="columns large-4 large-offset-2">
-				<h4>Leitung</h4>
+				<!--<h4>Leitung</h4>
 				<p>Claudia Kahnt <br />
 					Email: <a href="mailto:claudia.kahnt@arcor.de">claudia.kahnt@arcor.de</a>
 				</p>
@@ -23,7 +23,8 @@
 				<p>Jan-Peter Oppenheimer<br />
 					Email: <a href="mailto:jp.oppenheimer@gmail.com">jp.oppenheimer@gmail.com</a><br />
 					M +49 174 45 33 382
-				</p>
+				</p>-->
+				<?php get_sidebar( 'sidebarfooter' ); ?>
 			</div>
 			<div class="columns large-4 end">
 				<?php echo do_shortcode('[contact-form-7 id="245" title="Kontaktformular 1"]'); ?>

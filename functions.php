@@ -98,6 +98,15 @@ function vkf_wiesloch_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar', 'vkf_wiesloch' ),
+		'id'            => 'sidebarfooter',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'vkf_wiesloch_widgets_init' );
 
@@ -156,30 +165,38 @@ require get_template_directory() . '/inc/vkf-fullslider.php';
  */
 require get_template_directory() . '/inc/vkf-calendar.php';
 /**
- * Load calendar functions.
+ * Load menu functions.
  */
 require get_template_directory() . '/inc/menu.php';
 /**
- * Load calendar functions.
+ * Load Checklist functions.
  */
 require get_template_directory() . '/inc/vkf-checklist.php';
 /**
- * Load calendar functions.
+ * Load Newsslider functions.
  */
 require get_template_directory() . '/inc/vkf-newsslider.php';
 /**
- * Load calendar functions.
+ * Load Teamer functions.
  */
 require get_template_directory() . '/inc/vkf-teamer.php';
 /**
- * Load calendar functions.
+ * Load Boxes functions.
  */
 require get_template_directory() . '/inc/vkf-boxes.php';
 /**
- * Load calendar functions.
+ * Load theme options Page functions.
  */
-require get_template_directory() . '/inc/theme-options.php';
+// require get_template_directory() . '/inc/theme-options.php';
 /**
- * Load calendar functions.
+ * Load Textfeatures functions.
  */
 require get_template_directory() . '/inc/vkf-textfeature.php';
+/**
+ * Load Cleanup functions.
+ */
+require get_template_directory() . '/inc/cleanup.php';
+/**
+ * Load Clientfriendy functions.
+ */
+require get_template_directory() . '/inc/clientfriendly.php';

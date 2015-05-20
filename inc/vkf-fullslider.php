@@ -133,28 +133,54 @@ if ( ! function_exists( 'vkf_wiesloch_slider_style' ) ) : //Template Tag Functio
 		    opacity: 1;
 		}
 		.jcarousel-control-prev {
-		    height: 210px;
+		    height: 50px;
 		    left: 10px;
 		    position: absolute;
 		    top: 48%;
 		    transform: translateY(-50%);
-		    width: 50px;
+		    width: 30px;
 		}
 		.jcarousel-control-next {
-		    height: 210px;
+		    height: 50px;
 		    right: 10px;
 		    position: absolute;
 		    top: 48%;
 		    transform: translateY(-50%);
-		    width: 50px;
+		    width: 30px;
 		}
     </style>
 
 	<?php
 	}
 endif;
-	?>
-<?php
+
+
+
+//Register Slider Scipts
+/*if (!function_exists('vkf_wiesloch_register_jcarousel_slider_script')) {
+
+	function vkf_wiesloch_register_jcarousel_slider_script() {
+	   wp_register_script( 'jcarousel', get_template_directory_uri() . '/js/jcarousel.min.js', array( 'jquery' ), 1.0, true);
+	   wp_register_script( 'touchswipe', get_template_directory_uri() . '/js/touchswipe.min.js', array( 'jquery' ), 1.0, true);
+	}
+	 
+	add_action( 'wp_enqueue_scripts', 'vkf_wiesloch_register_jcarousel_slider_script' );
+}*/
+
+
+//Enqueue Slider Scipts
+/*if (!function_exists('vkf_wiesloch_register_jcarousel_slider_script')) {
+
+	function vkf_wiesloch_enqueue_jcarousel_slider_script() {
+	   wp_enqueue_script( 'jcarousel' );
+	   wp_enqueue_script( 'touchswipe' );
+	}
+	 
+	add_action( 'wp_enqueue_scripts', 'vkf_wiesloch_enqueue_jcarousel_slider_script' );
+
+}*/
+
+
 if ( ! function_exists( 'vkf_wiesloch_slider_script' ) ) : //include Slider files
 	add_action('wp_footer','vkf_wiesloch_slider_script');
 	function vkf_wiesloch_slider_script(){ ?>
@@ -267,7 +293,7 @@ endif;
 * @param array|string  See optional args description above.
 * @return object|WP_Error the registered post type object, or an error object
 */
-function vkf_wiesloch_homeslider() {
+function vkf_wiesloch_register_homeslider() {
 
 	$labels = array(
 		'name'                => __( 'Features', 'vkf_wiesloch' ),
@@ -294,7 +320,7 @@ function vkf_wiesloch_homeslider() {
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => null,
-		'menu_icon'           => null,
+		'menu_icon'           => 'dashicons-images-alt',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => true,
@@ -312,4 +338,4 @@ function vkf_wiesloch_homeslider() {
 	register_post_type( 'homeslider', $args );
 }
 
-add_action( 'init', 'vkf_wiesloch_homeslider' );
+add_action( 'init', 'vkf_wiesloch_register_homeslider' );

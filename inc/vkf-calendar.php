@@ -34,7 +34,7 @@ function vkf_wiesloch_calendar_posttype() {
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => null,
-		'menu_icon'           => null,
+		'menu_icon'           => 'dashicons-calendar',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => true,
@@ -69,10 +69,10 @@ function vkf_wiesloch_calendar(){
 	    $totalposts = count($posts);
 	    ?>
 		<div class="termine section" id="termine">
-			<img src="<?php bloginfo('template_directory'); ?>/img/taschenlampe.png" class="sectionicon">
+			<img src="<?php echo get_theme_mod('calendaricon', get_stylesheet_directory_uri() . '/img/taschenlampe.png'); ?>" class="sectionicon">
 			<div class="row">
 				<div class="columns large-8 large-offset-2 medium-8 medium-offset-2">
-					<h3>Anstehende Termine</h3>
+					<h3 class="calendarheadline"><?php echo get_theme_mod('calendar_headline', 'Anstehende Termine'); ?></h3>
 		    		<?php
 			        foreach( $posts as $post ): setup_postdata( $post );
 			        //$excerpt = get_the_excerpt();

@@ -17,8 +17,8 @@ function vkf_wiesloch_news_slider() {
 	    if ($totalposts != 1): //If more than 1 alider item: display slider
 	    ?>
 			<div class="news" id="news">
-				<img src="<?php bloginfo('template_directory'); ?>/img/news-section-icon.png" class="sectionicon"/>
-				<h3>News und Neuigkeiten</h3>
+				<img src="<?php echo get_theme_mod('news_icon', get_stylesheet_directory_uri() . '/img/news-section-icon.png'); ?>" class="sectionicon"/>
+				<h3 class="newshead"><?php echo get_theme_mod('news_headline', 'News und Neuigkeiten'); ?></h3>
 				<div class="row">
 					<div class="jcarousel-wrapper-news columns large-8 large-offset-2">
 					    <div class="jcarousel-news newsslider">
@@ -43,6 +43,8 @@ function vkf_wiesloch_news_slider() {
 						      ?>
 							</div>
 						</div>
+						<a href="#" class="jcarousel-news-control-prev"><img src="<?php bloginfo('template_directory'); ?>/img/prev.png" width="13" /></a>
+                		<a href="#" class="jcarousel-news-control-next"><img src="<?php bloginfo('template_directory'); ?>/img/next.png" width="13" /></a>
 					    <div class="jcarousel-news-pagination"></div>
 					</div>
 				</div>
@@ -68,10 +70,10 @@ if ( ! function_exists( 'vkf_wiesloch_jcarousel_newsslider_script' ) ) : // slid
 		//width des slider containers holen (gleichzeitig browserwidth)
 		var sliderWidth = jQuery('.jcarousel-news').width();
 
-		var windowsize = $(window).width();
+		var windowsize = jQuery(window).width();
 
 		jQuery(window).resize(function() {
-		  windowsize = $(window).width();
+		  windowsize = jQuery(window).width();
 		});
 
 		(function($) {
@@ -86,6 +88,32 @@ if ( ! function_exists( 'vkf_wiesloch_jcarousel_newsslider_script' ) ) : // slid
 			            target: '+=1',
 			            autostart: true
 			        });
+		        jQuery('.jcarousel-news-control-prev')
+		            .on('jcarouselcontrol:active', function() {
+		                jQuery(this).removeClass('inactive');
+		            })
+		            .on('jcarouselcontrol:inactive', function() {
+		                jQuery(this).addClass('inactive');
+		            })
+		            .jcarouselControl({
+		                target: '-=1'
+		            });
+
+
+		        jQuery('.jcarousel-news-control-next')
+		            .on('jcarouselcontrol:active', function() {
+		                $(this).removeClass('inactive');
+		            })
+		            .on('jcarouselcontrol:inactive', function() {
+		                $(this).addClass('inactive');
+		            })
+		            .jcarouselControl({
+		                target: '+=1'
+		            });
+
+
+
+
 
 				jQuery('.jcarousel-news-pagination')
 					.on('jcarouselpagination:active', 'span', function() {
@@ -150,19 +178,21 @@ if ( ! function_exists( 'vkf_wiesloch_jcarousel_newsslider_script' ) ) : // slid
 endif;
 
 
-
 if ( ! function_exists( 'vkf_wiesloch_news_slider_style' ) ) : //Template Tag Function
 	add_action('wp_head','vkf_wiesloch_news_slider_style');
 	function vkf_wiesloch_news_slider_style(){ ?>
 	<style>
 
 		.jcarousel-wrapper-news {
-		    width: 100%;
-		    overflow: hidden;
+		    /*width: 100%;*/
 		    position: relative;
 
 		    margin: auto;
 		}
+		.jcarousel-wrapper-news > div{
+			overflow: hidden;
+		}
+
 
 		.jcarousel-news {
 		    position: relative;
@@ -215,6 +245,36 @@ if ( ! function_exists( 'vkf_wiesloch_news_slider_style' ) ) : //Template Tag Fu
 		    display: inline-block;
 		    margin-right: 5px;
 		    cursor: pointer;
+		}
+		.jcarousel-news-control-prev {
+		    height: 210px;
+		    left: 10px;
+		    position: absolute;
+		    top: 48%;
+		    -moz-transform: translateY(-20%);
+		    -webkit-transform: translateY(-20%);
+		    -o-transform: translateY(-20%);
+		    transform: translateY(-20%);
+		    width: 50px;
+		}
+		.jcarousel-news-control-next {
+		    height: 210px;
+		    right: 10px;
+		    position: absolute;
+		    top: 48%;
+		    -moz-transform: translateY(-20%);
+		    -webkit-transform: translateY(-20%);
+		    -o-transform: translateY(-20%);
+		    transform: translateY(-20%);
+		    width: 50px;
+		}
+		.jcarousel-wrapper-news .jcarousel-news-control-prev {
+		    left: -29px;
+		    top: 56%;
+		}
+		.jcarousel-wrapper-news .jcarousel-news-control-next {
+		    right: -70px;
+		    top: 56%;
 		}
 
 		.jcarousel-news-pagination span:last-child {

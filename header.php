@@ -13,12 +13,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<script src="<?php bloginfo('template_directory'); ?>/js/vendor/jquery.js"></script>
+<!--<script src="<?php bloginfo('template_directory'); ?>/js/vendor/jquery.js"></script>-->
+<link rel="shortcut icon" href="<?php echo get_theme_mod('teamer_headline', get_stylesheet_directory_uri() . '/img/favicon.png'); ?>" type="image/png" />
+<link rel="icon" href="<?php echo get_theme_mod('teamer_headline', get_stylesheet_directory_uri() . '/img/favicon.png'); ?>" type="image/png" />
 <?php wp_head(); ?>
-<link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/foundation.css" />
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/theme.css" />
-<script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr.js"></script>
+
 </head>
 
 <body <?php body_class(); ?>>

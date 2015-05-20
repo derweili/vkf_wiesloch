@@ -36,22 +36,15 @@ if ( ! isset( $_REQUEST['settings-updated'] ) )
     <?php $options = get_option( 'vkf_wiesloch_theme_options' ); ?>
 
     <table class="form-table">
-      <tr valign="top">
-        <th scope="row">Home Header</th>
-        <td><input id="vkf_wiesloch_theme_options[homeheader]" class="regular-text" type="text" name="vkf_wiesloch_theme_options[homeheader]" value="<?php esc_attr_e( $options['homeheader'] ); ?>" /></td>
-      </tr> 
-      <tr valign="top">
-        <th scope="row">Checkliste Subheadline</th>
-        <td><input id="vkf_wiesloch_theme_options[checklistsub]" class="regular-text" type="text" name="vkf_wiesloch_theme_options[checklistsub]" value="<?php esc_attr_e( $options['checklistsub'] ); ?>" /></td>
-      </tr>  
+      </tr>
        <tr valign="top">
-        <th scope="row">Checkliste PDF</th>
-        <td><input id="vkf_wiesloch_theme_options[checklistpdf]" class="regular-text" type="text" name="vkf_wiesloch_theme_options[checklistpdf]" value="<?php esc_attr_e( $options['checklistpdf'] ); ?>" /></td>
-      </tr>  
+        <th scope="row">Favicon</th>
+        <td><input id="vkf_wiesloch_theme_options[favicon]" class="regular-text" type="text" name="vkf_wiesloch_theme_options[favicon]" value="<?php esc_attr_e( $options['favicon'] ); ?>" /><?php if( !empty($options['favicon']) ){echo '<img src="' . $options['favicon'] . '" class="faviconpreview" style="margin-left:10px;" />';} ?></td>
+      </tr> 
       <tr valign="top">
         <th scope="row">Google Analytics</th>
         <td><textarea id="vkf_wiesloch_theme_options[analytics]" class="large-text" cols="50" rows="10" name="vkf_wiesloch_theme_options[analytics]"><?php echo esc_textarea( $options['analytics'] ); ?></textarea></td>
-      </tr>
+
     </table>
     
     <!-- submit -->
